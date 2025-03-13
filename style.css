@@ -1,0 +1,154 @@
+/* Corpo della pagina */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000; /* Sfondo nero */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #00ff00; /* Colore del testo verde */
+}
+
+/* Stile per il titolo */
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #00ff00;
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    letter-spacing: 2px;
+    animation: slideIn 2s forwards; /* Animazione del titolo */
+    text-shadow: 2px 2px 10px rgb(255, 255, 255); /* Effetto bagliore del testo */
+}
+
+@keyframes slideIn {
+    0% {
+        left: -500px;
+    }
+    100% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Contenitore principale per la login e SVG */
+.login-container {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Contenitore delle onde */
+.wave-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Le onde non interferiscono con l'interazione utente */
+}
+
+/* Stili per l'elemento SVG */
+.wave-animation {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 55%; /* Posiziona al 50% dall'alto */
+    left: 50%; /* Posiziona al 50% da sinistra */
+    transform: translate(-50%, -50%); /* Centra perfettamente l'elemento */
+    animation: waveAnimation 10s linear infinite; /* Animazione delle onde in loop */
+}
+
+/* Onde con solo bordo bianco e bagliore */
+path {
+    fill: none; /* Nessun riempimento */
+    stroke-width: 2; /* Spessore del bordo */
+    filter: drop-shadow(1px 1px 5px #ffffff); /* Effetto glow bianco */
+}
+
+/* Contenitore della login */
+.login-box {
+    position: relative;
+    background: transparent; /* Rimuove lo sfondo */
+    padding: 30px;
+    border-radius: 80px; /* Angoli arrotondati */
+    text-align: center;
+    color: #00ff00; /* Colore del testo verde */
+    box-shadow: none; /* Rimuove l'ombra */
+    z-index: 2; /* Mantiene il box sopra le onde */
+}
+
+/* Titolo all'interno del box */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Stili per i campi di input */
+.input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 10px  0;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Focus sui campi di input */
+.input-field:focus {
+    border-color: #00ff00; /* Cambia il colore del bordo quando il campo è selezionato */
+}
+
+/* Pulsante di login */
+.login-btn {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    margin: 10px 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #00ff00, #0ce82a); /* Gradiente di colore per il pulsante */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s ease, transform 0.2s ease;
+}
+
+/* Effetto hover per il pulsante di login */
+.login-btn:hover {
+    transform: scale(1.1); /* Aumenta la dimensione al passaggio del mouse */
+    box-shadow: 0 0 15px rgb(26, 255, 0); /* Aggiungi un'ombra verde brillante */
+}
+
+/* Link sotto il box di login */
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Stili per i link */
+.links a {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Effetto hover per i link */
+.links a:hover {
+    color: #00ff00; /* Colore verde quando il link viene evidenziato */
+}

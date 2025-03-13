@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login ANIMATO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">My Space</h1> <!-- Titolo della pagina, visibile in alto al centro -->
+    <div class="login-container"> <!-- Contenitore principale per la login e l'animazione delle onde -->
+        <!-- Box di login -->
+        <div class="login-box">
+            <h2>Login</h2> <!-- Titolo "Login" nel box di login -->
+            <input type="text" class="input-field" placeholder="Nome utente" required> <!-- Campo per il nome utente -->
+            <input type="password" class="input-field" placeholder="Password" required> <!-- Campo per la password -->
+            <button class="login-btn">Login</button> <!-- Pulsante di login -->
+            <div class="links"> <!-- Link sotto il box di login -->
+                <a href="#">Registrati</a>
+                <a href="#">Password dimenticata?</a>
+            </div>
+        </div>
+
+        <!-- Elemento SVG per le onde circolari -->
+        <div class="wave-container">
+            <svg class="wave-animation" viewBox="0 0 500 500">
+                <defs>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur result="blurred" in="SourceGraphic" stdDeviation="5" />
+                        <feComponentTransfer in="blurred">
+                            <feFuncA type="table" tableValues="0.2 1" />
+                        </feComponentTransfer>
+                        <feComposite in2="SourceAlpha" operator="in" />
+                        <feMerge>
+                            <feMergeNode />
+                            <feMergeNode in="SourceAlpha" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path id="wave1" /> <!-- Prima onda -->
+                <path id="wave2" /> <!-- Seconda onda -->
+                <path id="wave3" /> <!-- Terza onda -->
+                <path id="wave4" /> <!-- Quarta onda -->
+                <path id="wave5" /> <!-- Quinta onda -->
+            </svg>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link al file JS per l'animazione delle onde -->
+</body>
+</html>
